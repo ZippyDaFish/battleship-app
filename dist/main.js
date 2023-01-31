@@ -1,1 +1,1 @@
-(()=>{let t={len:5,hits:0,sunk:!1,hit(){this.hits++}};t.hit(),console.log(t)})();
+(()=>{let s={len:5,hits:0,sunk:!1,hit(){this.hits++},isSunk(){return this.hits>=this.len}};s.hit(),console.log(s),console.log(s.isSunk())})();

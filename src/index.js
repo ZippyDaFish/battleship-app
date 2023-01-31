@@ -15,8 +15,24 @@ function shipFactory(len){
     };
 }
 
-let carrier = shipFactory(5);
-carrier.hit();
+function gameboardFactory(){
+    return {
+        board: [
+            [0,0,0,0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0,0,0,0],
+        ],
+        getCoords(y, x){
+            return(this.board[y][x]);
+        }
+    }
+}
 
-console.log(carrier);
-console.log(carrier.isSunk());
+let board1 = gameboardFactory();

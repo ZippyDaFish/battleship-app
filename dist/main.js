@@ -1,0 +1,1 @@
+(()=>{let t={len:5,hits:0,sunk:!1,hit(){this.hits++}};t.hit(),console.log(t)})();

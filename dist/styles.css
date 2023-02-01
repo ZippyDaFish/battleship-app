@@ -3,6 +3,10 @@
     --grid-rows: 10;
 }
 
+.boards {
+    display: flex;
+    justify-content: space-evenly;
+}
 .container {
     width: 500px;
     height: 500px;
@@ -14,4 +18,7 @@
 .cell {
     background-color: white;
     border: 1px solid black;
+}
+.cell:hover {
+    background-color: lightgray;
 }

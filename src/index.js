@@ -35,4 +35,6 @@ function gameboardFactory(){
 }
 
 let playerBoard = gameboardFactory();
-playerBoard.makeBoard(10,10, document.getElementById('player-board'));
+playerBoard.makeBoard(10,10, document.getElementById('player-board-container'));
+let computerBoard = gameboardFactory();
+computerBoard.makeBoard(10,10, document.getElementById('computer-board-container'))

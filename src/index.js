@@ -17,22 +17,22 @@ function shipFactory(len){
 
 function gameboardFactory(){
     return {
-        board: [
-            [0,0,0,0,0,0,0,0,0,0],
-            [0,0,0,0,0,0,0,0,0,0],
-            [0,0,0,0,0,0,0,0,0,0],
-            [0,0,0,0,0,0,0,0,0,0],
-            [0,0,0,0,0,0,0,0,0,0],
-            [0,0,0,0,0,0,0,0,0,0],
-            [0,0,0,0,0,0,0,0,0,0],
-            [0,0,0,0,0,0,0,0,0,0],
-            [0,0,0,0,0,0,0,0,0,0],
-            [0,0,0,0,0,0,0,0,0,0],
-        ],
-        getCoords(y, x){
-            return(this.board[y][x]);
-        }
+        board: [],
+        makeBoard(rows, cols, container) {
+            container.style.setProperty('--grid-rows', rows);
+            container.style.setProperty('--grid-cols', cols);
+            for (c = 0; c < (rows * cols); c++) {
+                let cell = document.createElement("div");
+                cell.setAttribute('id', c.toString());
+                cell.addEventListener('click', function handleClick(){console.log(cell.id)});
+                this.board.push(cell);
+                container.appendChild(cell).className = "cell";
+            };
+        },
+        fire(){},
+        hitCheck(){}
     }
 }
 
-let board1 = gameboardFactory();
+let playerBoard = gameboardFactory();
+playerBoard.makeBoard(10,10, document.getElementById('player-board'));

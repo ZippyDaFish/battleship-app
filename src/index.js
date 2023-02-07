@@ -17,7 +17,7 @@ function shipFactory(len){
 
 function gameboardFactory(){
     return {
-        board: [],
+        board: {},
         makeBoard(rows, cols, container) {
             container.style.setProperty('--grid-rows', rows);
             container.style.setProperty('--grid-cols', cols);
@@ -25,7 +25,7 @@ function gameboardFactory(){
                 let cell = document.createElement("div");
                 cell.setAttribute('id', c.toString());
                 cell.addEventListener('click', function handleClick(){console.log(cell.id)});
-                this.board.push(cell);
+                this.board[c] = cell;
                 container.appendChild(cell).className = "cell";
             };
         },
@@ -38,3 +38,4 @@ let playerBoard = gameboardFactory();
 playerBoard.makeBoard(10,10, document.getElementById('player-board-container'));
 let computerBoard = gameboardFactory();
 computerBoard.makeBoard(10,10, document.getElementById('computer-board-container'))
+console.log(computerBoard.board);
